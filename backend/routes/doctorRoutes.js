@@ -5,8 +5,10 @@ import {
   getSingleDoctor,
   updateDoctor,
   deleteDoctor,
+  getAllDoctorsAdmin,
+  approveDoctorController,
 } from "../controllers/doctorController.js";
-import { requireSignIn } from "../middlewares/authMiddleware.js";
+import { requireSignIn, requireAdmin } from "../middlewares/authMiddleware.js";
 import upload from "../config/multer.js";
 
 const router = express.Router();
@@ -19,10 +21,14 @@ router.post(
   createDoctor
 );
 
-// GET ALL
+// GET ALL (approved only — for frontend)
 router.get("/all", getAllDoctors);
 
+// GET ALL (admin — including unapproved)
+router.get("/admin/all", requireSignIn, requireAdmin, getAllDoctorsAdmin);
 
+// APPROVE / REJECT
+router.put("/approve/:id", requireSignIn, requireAdmin, approveDoctorController);
 
 // GET SINGLE
 router.get("/:id", getSingleDoctor);
@@ -36,6 +42,6 @@ router.put(
 );
 
 // DELETE
-router.delete("/delete/:id", requireSignIn, deleteDoctor);
+router.delete("/delete/:id", requireSignIn, requireAdmin, deleteDoctor);
 
 export default router;

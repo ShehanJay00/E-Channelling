@@ -90,3 +90,33 @@ export const deleteDoctor = async (req, res) => {
     res.status(500).json({ message: "Delete Doctor Error" });
   }
 };
+
+// GET ALL DOCTORS FOR ADMIN (including unapproved)
+export const getAllDoctorsAdmin = async (req, res) => {
+  try {
+    const doctors = await doctorModel
+      .find()  // no isApproved filter — admin sees all
+      .populate("userId", "name email phone");
+    res.json(doctors);
+  } catch (error) {
+    res.status(500).json({ message: "Get Doctors Error" });
+  }
+};
+
+// APPROVE / REJECT DOCTOR (toggle isApproved)
+export const approveDoctorController = async (req, res) => {
+  try {
+    const doctor = await doctorModel.findById(req.params.id);
+    if (!doctor) return res.status(404).json({ message: "Doctor not found" });
+
+    doctor.isApproved = req.body.isApproved;
+    await doctor.save();
+
+    res.json({
+      message: doctor.isApproved ? "Doctor Approved" : "Doctor Rejected",
+      doctor,
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Approve Doctor Error" });
+  }
+};

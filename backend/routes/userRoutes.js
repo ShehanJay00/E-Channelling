@@ -4,8 +4,9 @@ import {
   loginController,
   getUserController,
   updateUserController,
+  getAdminStats,
 } from "../controllers/userController.js";
-import { requireSignIn } from "../middlewares/authMiddleware.js";
+import { requireSignIn, requireAdmin } from "../middlewares/authMiddleware.js";
 import upload from "../config/multer.js";
 
 const router = express.Router();
@@ -19,5 +20,9 @@ router.patch(
   upload.single("image"),
   updateUserController
 );
+
+// Admin routes
+router.get("/admin/stats", requireSignIn, requireAdmin, getAdminStats);
+router.get("/admin/all-users", requireSignIn, requireAdmin, getUserController);
 
 export default router;

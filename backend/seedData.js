@@ -218,10 +218,28 @@
         const insertedDoctors = await doctorModel.insertMany(doctorDocs);
         console.log(`👨‍⚕️ Inserted ${insertedDoctors.length} doctors (all approved)`);
 
-        // 6️⃣ Summary
+        // 6️⃣ Create admin user (if not already exists)
+        const adminEmail = "admin@echanneling.lk";
+        let adminUser = await userModel.findOne({ email: adminEmail });
+        if (!adminUser) {
+        const adminPassword = await bcrypt.hash("admin123", 10);
+        adminUser = await userModel.create({
+            name: "Admin",
+            email: adminEmail,
+            password: adminPassword,
+            phone: "0771234567",
+            role: "admin",
+        });
+        console.log("🔑 Created admin user (admin@echanneling.lk / admin123)");
+        } else {
+        console.log("🔑 Admin user already exists — skipping");
+        }
+
+        // 7️⃣ Summary
         console.log("\n========== SEED COMPLETE ==========");
         console.log(`Hospitals : ${insertedHospitals.length}`);
         console.log(`Doctors   : ${insertedDoctors.length}`);
+        console.log(`Admin     : ${adminEmail}`);
         console.log("===================================\n");
 
         // Disconnect

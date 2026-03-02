@@ -1,44 +1,57 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
+  const location = useLocation();
+
+  // Helper to highlight active link
+  const isActive = (path) => location.pathname === path;
+
+  const linkClass = (path) =>
+    `text-decoration-none d-block px-2 py-1 rounded ${
+      isActive(path) ? "bg-dark text-white" : "text-dark"
+    }`;
+
   return (
     <div
       className="bg-white border-end p-3"
-      style={{ width: "230px" }}
+      style={{ width: "230px", minHeight: "100vh" }}
     >
-      <h5 className="mb-4 text-primary fw-bold">
-        Smart eChanneling
-      </h5>
+      <h5 className="mb-4 text-primary fw-bold">Smart eChanneling</h5>
 
       <ul className="list-unstyled">
         <li className="mb-3">
-          <Link to="/" className="text-decoration-none text-dark">
+          <Link to="/" className={linkClass("/")}>
             📊 Dashboard
           </Link>
         </li>
 
         <li className="mb-3">
-          <Link to="/appointments" className="text-decoration-none text-dark">
-            📅 Appointment
+          <Link to="/appointments" className={linkClass("/appointments")}>
+            📅 Appointments
           </Link>
         </li>
 
         <li className="mb-3">
-          <Link to="/doctors" className="text-decoration-none text-dark">
-            👨‍⚕️ Add Doctor
+          <Link to="/doctors" className={linkClass("/doctors")}>
+            👨‍⚕️ Doctors
           </Link>
         </li>
 
-
-    <li className="mb-3">
-     <Link to="/add-hospital" className="text-decoration-none text-dark">
-    🏥 Add Hospital
-       </Link>
-      </li>
+        <li className="mb-3">
+          <Link to="/add-hospital" className={linkClass("/add-hospital")}>
+            🏥 Hospitals
+          </Link>
+        </li>
 
         <li className="mb-3">
-          <Link to="/settings" className="text-decoration-none text-dark">
-            ⚙️ Setting
+          <Link to="/users" className={linkClass("/users")}>
+            👥 Users
+          </Link>
+        </li>
+
+        <li className="mb-3">
+          <Link to="/settings" className={linkClass("/settings")}>
+            ⚙️ Settings
           </Link>
         </li>
       </ul>

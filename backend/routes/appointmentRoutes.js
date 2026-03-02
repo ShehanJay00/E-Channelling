@@ -21,8 +21,8 @@ router.get("/all", getAllAppointments);
 // GET DETAILS
 router.get("/details/:id", getAppointmentDetails);
 
-// UPDATE STATUS
-router.put("/update/:id", updateAppointmentStatus);
+// UPDATE STATUS (requires auth — admin can update any)
+router.put("/update/:id", requireSignIn, updateAppointmentStatus);
 
 // GET USER APPOINTMENTS
 router.get("/user/all", requireSignIn, getUserAppointments);

@@ -1,8 +1,11 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import Home from "./pages/Home";
-import AllAppointments from "./pages/AllAppointments";
-import AddDoctor from "./pages/Alldoctor";
-import AllUsers from "./pages/AllUsers";
+import AllAppointments from "./pages/Allappointments";
+import AllDoctors from "./pages/Alldoctor";
+import AllUsers from "./pages/Allusers";
+import AddHospital from "./pages/AddHospital";
+import Settings from "./pages/Setting";
 import Login from "./pages/Login";
 
 function App() {
@@ -10,6 +13,9 @@ function App() {
 
   return (
     <BrowserRouter>
+      {/* Toast notifications */}
+      <Toaster position="top-right" />
+
       <Routes>
         <Route path="/login" element={!token ? <Login /> : <Navigate to="/" />} />
 
@@ -24,13 +30,23 @@ function App() {
         />
 
         <Route
-          path="/add-doctor"
-          element={token ? <AddDoctor /> : <Navigate to="/login" />}
+          path="/doctors"
+          element={token ? <AllDoctors /> : <Navigate to="/login" />}
         />
 
         <Route
           path="/users"
           element={token ? <AllUsers /> : <Navigate to="/login" />}
+        />
+
+        <Route
+          path="/add-hospital"
+          element={token ? <AddHospital /> : <Navigate to="/login" />}
+        />
+
+        <Route
+          path="/settings"
+          element={token ? <Settings /> : <Navigate to="/login" />}
         />
       </Routes>
     </BrowserRouter>

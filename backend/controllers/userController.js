@@ -1,6 +1,9 @@
 import userModel from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import JWT from "jsonwebtoken";
+import doctorModel from "../models/doctorModel.js";
+import appointmentModel from "../models/appointmentModel.js";
+import hospitalModel from "../models/hospitalModel.js";
 
 
 // ================= REGISTER =================
@@ -111,5 +114,41 @@ export const updateUserController = async (req, res) => {
 
   } catch (error) {
     res.status(500).json({ message: "Update Error" });
+  }
+};
+
+
+
+// ================= ADMIN DASHBOARD STATS =================
+export const getAdminStats = async (req, res) => {
+  try {
+    const totalDoctors = await doctorModel.countDocuments();
+    const totalUsers = await userModel.countDocuments({ role: "user" });
+    const totalAppointments = await appointmentModel.countDocuments();
+    const totalHospitals = await hospitalModel.countDocuments();
+    const pendingAppointments = await appointmentModel.countDocuments({ status: "pending" });
+
+    // Get latest 5 appointments for dashboard
+    const latestAppointments = await appointmentModel
+      .find()
+      .sort({ createdAt: -1 })
+      .limit(5)
+      .populate("userId", "name")
+      .populate("doctorId", "name specialization");
+
+    res.json({
+      success: true,
+      stats: {
+        totalDoctors,
+        totalUsers,
+        totalAppointments,
+        totalHospitals,
+        pendingAppointments,
+      },
+      latestAppointments,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Stats Error" });
   }
 };

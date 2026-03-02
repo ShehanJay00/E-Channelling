@@ -63,9 +63,10 @@ export const updateAppointmentStatus = async (req, res) => {
     if (!appointment)
       return res.status(404).json({ message: "Appointment not found" });
 
-    // Check if this doctor owns this appointment
-    if (appointment.doctorId.toString() !== req.user.id) {
-      return res.status(403).json({ message: "Not your appointment" });
+    // Admin can update any appointment; doctors can only update their own
+    if (req.user.role !== "admin" &&
+        appointment.doctorId.toString() !== req.user.id) {
+      return res.status(403).json({ message: "Not authorized" });
     }
 
     appointment.status = status;
