@@ -1,0 +1,141 @@
+.myapp-page {
+  padding: 50px 80px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+.myapp-page h2 {
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* Tabs */
+.tabs {
+  margin-bottom: 30px;
+}
+
+.tabs button {
+  padding: 8px 18px;
+  margin-right: 10px;
+  border-radius: 20px;
+  border: none;
+  background: #e0e0e0;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.tabs button:hover {
+  background: #000;
+  color: white;
+}
+
+/* Empty Box */
+.empty-box {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.empty-box h4 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.empty-box p {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.book-btn {
+  padding: 10px 22px;
+  border-radius: 25px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.book-btn:hover {
+  background: #333;
+}
+
+/* Appointment Card */
+.appointment-card {
+  background: white;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.appointment-card h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.appointment-card p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Status */
+.status {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.status.Upcoming {
+  background: #d9ecff;
+  color: #007bff;
+}
+
+.status.Completed {
+  background: #d4edda;
+  color: #28a745;
+}
+
+.status.Cancelled {
+  background: #f8d7da;
+  color: #dc3545;
+}
+
+/* Actions */
+.actions button {
+  padding: 6px 14px;
+  margin-left: 10px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.actions button:first-child {
+  background: #28a745;
+  color: white;
+}
+
+.actions button:first-child:hover {
+  background: #1e7e34;
+}
+
+.cancel-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: #a71d2a;
+}

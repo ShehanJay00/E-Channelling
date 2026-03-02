@@ -1,0 +1,164 @@
+.symptom-page {
+  padding: 50px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+.title-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.ai-icon {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.chat-container {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.chat-box {
+  height: 300px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  padding-right: 10px;
+}
+
+.message {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  max-width: 80%;
+  white-space: pre-line;
+}
+
+.message.user {
+  background: #000;
+  color: white;
+  margin-left: auto;
+}
+
+.message.ai {
+  background: #f0f4f8;
+  color: black;
+  max-width: 90%;
+}
+
+/* ── AI Card Styles ── */
+.ai-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ai-card-section {
+  padding: 0;
+}
+
+.ai-card-label {
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.ai-card-section p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* Severity badges */
+.severity-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.severity-low { background: #d4edda; color: #155724; }
+.severity-lowtomedium { background: #fff3cd; color: #856404; }
+.severity-medium { background: #ffe0b2; color: #e65100; }
+.severity-mediumtohigh { background: #f8d7da; color: #721c24; }
+.severity-high { background: #f8d7da; color: #721c24; }
+.severity-unknown { background: #e2e3e5; color: #383d41; }
+
+/* Condition tags */
+.condition-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.condition-tag {
+  background: #e3f2fd;
+  color: #1565c0;
+  padding: 3px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Remedy list */
+.remedy-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Specialist recommendation */
+.specialist-box {
+  background: #e8f5e9;
+  padding: 8px 12px !important;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: #2e7d32;
+}
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.chat-input button {
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+
+.book-now-btn {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.disclaimer {
+  font-size: 12px;
+  color: gray;
+  margin-top: 10px;
+}

@@ -1,0 +1,332 @@
+/* COMMON */
+.hospital-page,
+.doctor-page,
+.booking-page,
+.success-page {
+  padding: 60px;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* HERO */
+.hospital-hero {
+  background: linear-gradient(to right, #717999, #254cc2);
+  color: white;
+  padding: 60px;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+/* GRID */
+.hospital-grid,
+.doctor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.hospital-card,
+.doctor-card,
+.booking-card,
+.success-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  position: relative;
+  text-align: center;
+}
+
+.hospital-card img,
+.doctor-card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+/* BUTTONS */
+.view-btn,
+.book-btn,
+.confirm-btn {
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.view-btn:hover,
+.book-btn:hover,
+.confirm-btn:hover {
+  background: #333;
+}
+
+.rating {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+}.search-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.search-input {
+  width: 40%;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.search-input:focus {
+  border: 1px solid #0e2ca8;
+}
+
+.no-result {
+  text-align: center;
+  font-size: 18px;
+  color: gray;
+  margin-top: 40px;
+} 
+/* PAGE BACKGROUND */
+.doctor-page {
+  min-height: 100vh;
+  padding: 80px 150px;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* TITLE */
+.doctor-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.doctor-title h2 {
+  font-size: 36px;
+  color: #1e3c72;
+}
+
+.doctor-title p {
+  color: #666;
+  margin-top: 8px;
+}
+
+/* CONTAINER */
+.doctor-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* CARD */
+.doctor-card {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  position: relative;
+}
+
+.doctor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.15);
+}
+
+/* IMAGE */
+.doctor-left img {
+  width: 150px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* MIDDLE INFO */
+.doctor-middle {
+  flex: 1;
+  margin-left: 50px;
+}
+
+.doctor-middle h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 15px;
+  background: #e0e7ff;
+  color: #1e3c72;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.doctor-details p {
+  margin: 6px 0;
+  color: #444;
+}
+
+/* BUTTON */
+.book-btn {
+  margin-top: 20px;
+  padding: 12px 35px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.book-btn:hover {
+  background: linear-gradient(to right, #16305a, #1e3c72);
+}
+
+/* RATING */
+.doctor-right {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+}
+
+.rating-box {
+  background: #fff8e1;
+  padding: 8px 15px;
+  border-radius: 15px;
+  font-weight: bold;
+  color: #ff9800;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+.booking-page {
+  background: #f4f6fb;
+  min-height: 100vh;
+  padding: 60px 120px;
+  font-family: Arial, sans-serif;
+}
+
+.booking-container {
+  display: flex;
+  gap: 40px;
+}
+
+.left-section {
+  flex: 2;
+}
+
+.right-section {
+  flex: 1;
+}
+
+/* Doctor Card */
+.doctor-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+
+.doctor-top {
+  display: flex;
+  position: relative;
+}
+
+.doctor-top img {
+  width: 150px;
+  border-radius: 15px;
+}
+
+.doctor-info {
+  margin-left: 30px;
+}
+
+.specialty {
+  color: #2a5298;
+  font-weight: bold;
+}
+
+.fee {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.rating {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #fceabb;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+/* Availability */
+.availability-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 10px 25px rgba(0,0,0,0.05);
+}
+
+.day {
+  margin-top: 20px;
+}
+
+.times span {
+  background: #eef2ff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  margin-right: 10px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* Right Booking Card */
+.booking-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.fee-box {
+  background: #e0e7ff;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+}
+
+.book-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+
+.book-btn:hover {
+  opacity: 0.8;
+}
+
+.note {
+  margin-top: 10px;
+  font-size: 13px;
+  color: gray;
+}

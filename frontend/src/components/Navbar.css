@@ -1,0 +1,247 @@
+/* Main Navbar Container */
+.navbar-container {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #E5E7EB;   /* light gray thin line */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* soft shadow */
+}
+
+/* Flex Row */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+/* Logo */
+.logo {
+  height: 45px;
+  width: auto;
+  cursor: pointer;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #0d6efd;
+}
+
+/* Active Link Style (NavLink use karanna nam) */
+.nav-links a.active {
+  background: #e9ecef;
+  padding: 6px 15px;
+  border-radius: 20px;
+}
+
+/* Buttons Section */
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Login Button */
+.login-btn {
+background:white;
+  border: 1px solid black;
+  padding: 7px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+   background: black;
+  color: white;
+}
+
+/* Register Button */
+.register-btn {
+  background: white;
+  border: 1px solid black;
+  padding: 7px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.register-btn:hover {
+  background: black;
+  color: white;
+}
+
+/* Profile Section (for logged in user) */
+.profile-section {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dropdown-arrow {
+  margin-left: 5px;
+  font-size: 12px;
+  user-select: none;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 50px; /* below profile pic */
+  right: 0;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  width: 180px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.dropdown-menu p {
+  margin: 0;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-menu p:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-menu p strong {
+  display: block;
+  text-align: center;
+  margin-bottom: 5px;
+}.profile-section {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.profile-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.arrow {
+  margin-left: 6px;
+  font-size: 12px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 60px;
+  width: 190px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  animation: fade 0.2s ease-in-out;
+  z-index: 999;
+}
+
+.dropdown-menu p {
+  padding: 10px 15px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.dropdown-menu p:hover {
+  background: #f5f5f5;
+}
+
+.username {
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+}
+
+.logout {
+  color: red;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.profile-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dropdown-arrow {
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: white;
+  width: 180px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 10px;
+}
+
+.dropdown-menu p {
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dropdown-menu p:hover {
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.logout {
+  color: red;
+}
